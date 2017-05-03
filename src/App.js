@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     CSSTransitionGroup,
-    // ReactTransitionGroup
+    // TransitionGroup
 } from 'react-transition-group';
 import logo from './logo.svg';
 import MyApp from './MyApp'
@@ -14,11 +14,12 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
             <CSSTransitionGroup transitionName="logo"
+                                component="div"
                                 transitionAppear={true}
                                 transitionAppearTimeout={0}  //must set time value is 0
                                 transitionEnter={false}
                                 transitionLeave={false}>
-                <img src={logo} className="App-logo" alt="logo" />
+                <img src={logo}  className="App-logo"  alt="logo" />
             </CSSTransitionGroup>
 
           <h2>Welcome to React-ReFlux-Animated</h2>
