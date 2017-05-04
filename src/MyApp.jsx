@@ -88,95 +88,95 @@ export default class myApp extends Component {
     //endregion  =====2.======//
 
     // region =====3.======//
-    componentDidMount () {
-        var _this=this,
-             speed=5;
-        this.tween=TweenLite.to(refNode,speed, {
-            x: 400,
-            y: 400,
-            opacity:0.1,
-            backgroundColor: '#2196f3',
-            onComplete:_this.onFinishTween.bind(this),
-            onCompleteParams:[speed, refNode]
-        });
-        this.tween.pause();
-        $("#play").click(function () {
-            this.tween.resume();
-        }.bind(this));
-
-        $("#stop").click(function () {
-            this.tween.pause();
-        }.bind(this));
-        // TweenMax 可以做什么？
-        // 暂停
-        // tween.pause();
-
-        // 继续播放
-        // tween.resume();
-
-        // 反转播放
-        // tween.reverse();
-
-        // 跳转到1s进度处开始播放
-        // tween.seek(1);
-
-        // 重播
-        // TweenMax.restart();
-
-        // 动画变为三倍速
-        // tween.timeScale(3);
-    }
-
-    onFinishTween(speed,refNode){
-        this.tween.reverse();
-        // TweenMax.from(refNode, speed, { x: -400,backgroundColor:"red"});
-    }
-
-
-    render () {
-        return (
-            <div className="App-middle">
-            <div style={{width:"100%",height:"450px"}}>
-                <div
-                    id="ball"
-                    ref={c => (refNode = c)}
-                    style={{
-                        width: '100px',
-                        height: '100px',
-                        margin: '100px',
-                        borderRadius: '50%',
-                        opacity:1,
-                        backgroundColor: 'red'
-                    }}>
-                </div>
-            </div>
-            <div >
-                <div style={{width:'100px',
-                             height: '35px',
-                             margin: '100px 100px 0px 250px',
-                             float: 'left',
-                             textAlign:'center',
-                             paddingTop:'10px',
-                             color:'#FFF',
-                             backgroundColor:'#2196f3'}}
-                     id="play">Play
-                </div>
-                <div style={{width:'100px',
-                             height: '35px',
-                             margin: '100px 100px 0px 100px',
-                             float: 'left',
-                             textAlign:'center',
-                             paddingTop:'10px',
-                             color:'#FFF',
-                             backgroundColor:'red'}}
-                     id="stop">Stop
-                </div>
-
-            </div>
-
-            </div>
-        );
-    }
+    // componentDidMount () {
+    //     var _this=this,
+    //          speed=5;
+    //     this.tween=TweenLite.to(refNode,speed, {
+    //         x: 400,
+    //         y: 400,
+    //         opacity:0.1,
+    //         backgroundColor: '#2196f3',
+    //         onComplete:_this.onFinishTween.bind(this),
+    //         onCompleteParams:[speed, refNode]
+    //     });
+    //     this.tween.pause();
+    //     $("#play").click(function () {
+    //         this.tween.resume();
+    //     }.bind(this));
+    //
+    //     $("#stop").click(function () {
+    //         this.tween.pause();
+    //     }.bind(this));
+    //     // TweenMax 可以做什么？
+    //     // 暂停
+    //     // tween.pause();
+    //
+    //     // 继续播放
+    //     // tween.resume();
+    //
+    //     // 反转播放
+    //     // tween.reverse();
+    //
+    //     // 跳转到1s进度处开始播放
+    //     // tween.seek(1);
+    //
+    //     // 重播
+    //     // TweenMax.restart();
+    //
+    //     // 动画变为三倍速
+    //     // tween.timeScale(3);
+    // }
+    //
+    // onFinishTween(speed,refNode){
+    //     this.tween.reverse();
+    //     // TweenMax.from(refNode, speed, { x: -400,backgroundColor:"red"});
+    // }
+    //
+    //
+    // render () {
+    //     return (
+    //         <div className="App-middle">
+    //         <div style={{width:"100%",height:"450px"}}>
+    //             <div
+    //                 id="ball"
+    //                 ref={c => (refNode = c)}
+    //                 style={{
+    //                     width: '100px',
+    //                     height: '100px',
+    //                     margin: '100px',
+    //                     borderRadius: '50%',
+    //                     opacity:1,
+    //                     backgroundColor: 'red'
+    //                 }}>
+    //             </div>
+    //         </div>
+    //         <div >
+    //             <div style={{width:'100px',
+    //                          height: '35px',
+    //                          margin: '100px 100px 0px 250px',
+    //                          float: 'left',
+    //                          textAlign:'center',
+    //                          paddingTop:'10px',
+    //                          color:'#FFF',
+    //                          backgroundColor:'#2196f3'}}
+    //                  id="play">Play
+    //             </div>
+    //             <div style={{width:'100px',
+    //                          height: '35px',
+    //                          margin: '100px 100px 0px 100px',
+    //                          float: 'left',
+    //                          textAlign:'center',
+    //                          paddingTop:'10px',
+    //                          color:'#FFF',
+    //                          backgroundColor:'red'}}
+    //                  id="stop">Stop
+    //             </div>
+    //
+    //         </div>
+    //
+    //         </div>
+    //     );
+    // }
 
     //endregion  =====3.======//
 
@@ -199,5 +199,37 @@ export default class myApp extends Component {
     // }
 
     //endregion  =====4.======//
+
+
+    // region =====5.======//
+    render () {
+        return (
+            <div className="App-middle">
+                <div className="m22">
+                <div id="ball"
+                     style={{
+                         width: '100px',
+                         height: '100px',
+                         borderRadius: '50%',
+                         border:'3px #a72525 solid'
+                         }}>
+                    <div
+                         style={{
+                             width: '10px',
+                             height: '10px',
+                             borderRadius: '50%',
+                             backgroundColor:'#a72570',
+                             margin:'45px auto',
+                         }}>
+                    </div>
+                </div>
+
+
+                </div>
+            </div>
+        )
+    }
+    //endregion  =====5.======//
+
 
 }
